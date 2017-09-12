@@ -1,7 +1,7 @@
 'use strict';
 var memory, price, color, img_color;
 do {
-	memory = +prompt('Выберите желаемой объем памяти телефона', '16, 32 или 64 Гб');
+	memory = +prompt('Выберите желаемый объем памяти телефона', '16, 32 или 64 Гб');
 } while (memory !== 16 && memory !== 32 && memory !== 64 && memory !== 0);
 switch (memory) {
 	case 16:
