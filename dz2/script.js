@@ -61,7 +61,7 @@ if (ask === true) {
 	document.write('<img src="img/' + color + '.jpg"></br>');
 	document.write('<b>Цена:</b> ' + phones[recomended].price + 'USD</br>');
 } else {
-	document.write('<h1>Мы старались!</h1>')
+	document.write('<h1>Мы старались!<br>=(</h1>')
 }
 
 
