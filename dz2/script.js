@@ -36,7 +36,6 @@ var calc = function (budget) {
 };
 do {
 	budget = +prompt('Какой у Вас бюджет?', '');
-	console.log(budget);
 } while (isNaN(budget) || budget === 0);
 calc(budget);
 if (closestRight !== undefined) {
@@ -44,16 +43,14 @@ if (closestRight !== undefined) {
 } else {
 	recomended = closestLeftItem;
 }
-var ask = confirm('Предлагаем: ' + phones[recomended].memory + 'Gb. Цена: ' + phones[recomended].price + 'USD');
-if (ask === false) {
-	if (isNaN(closestLeftItem - 1)) {
-		alert('Кажется нам нечего Вам предложить =(');
-	} else if (isNaN(closestRightItem + 1)) {
-		recomended = closestLeftItem - 1;
-		ask = confirm('Предлагаем: ' + phones[recomended].memory + 'Gb. Цена: ' + phones[recomended].price + 'USD');
+var ask = confirm('Предлагаем: ' + phones[recomended].memory + 'Gb. Цена: ' + phones[recomended].price + 'USD. БЕРЕМ?');
+while (ask !== true) {
+	recomended--;
+	if (recomended >= 0) {
+		ask = confirm('Можем предложить: ' + phones[recomended].memory + 'Gb. Цена: ' + phones[recomended].price + 'USD');
 	} else {
-		recomended = closestLeftItem;
-		ask = confirm('Предлагаем: ' + phones[recomended].memory + 'Gb. Цена: ' + phones[recomended].price + 'USD');
+		alert('Дешевле нет ничего =(');
+		break;
 	}
 }
 if (ask === true) {
